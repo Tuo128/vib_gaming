@@ -1,0 +1,31 @@
+{
+  "name": "vib-gaming",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Team Vib Gaming monorepo - Vampire Survivors-style web games + portal",
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:portal": "turbo dev --filter=portal",
+    "dev:backend": "cd backend && flask run --port 5001",
+    "build": "turbo build",
+    "build:portal": "turbo build --filter=portal",
+    "build:games": "turbo build --filter=./apps/games/*",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "turbo clean"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.0",
+    "prettier": "^3.5.0",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
